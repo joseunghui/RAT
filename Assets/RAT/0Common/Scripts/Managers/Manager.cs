@@ -9,14 +9,14 @@ public class Manager : MonoBehaviour
     static Manager s_instance;
     static Manager Instance { get { Init(); return s_instance; } }
 
-    //InputManager _input = new InputManager();
+    InputManager _input = new InputManager();
     //PoolManager _pool = new PoolManager();
     ResourceManager _resource = new ResourceManager();
     //SoundManager _sound = new SoundManager();
     //SceneManagerEx _scene = new SceneManagerEx();
     UIManager _ui = new UIManager();
 
-    //public static InputManager Input { get { return Instance._input; } }
+    public static InputManager Input { get { return Instance._input; } }
     //public static PoolManager Pool { get { return Instance._pool; } }
     public static ResourceManager Resource { get { return Instance._resource; } }
     //public static SoundManager Sound { get { return Instance._sound; } }

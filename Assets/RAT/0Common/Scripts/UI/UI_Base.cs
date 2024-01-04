@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public abstract class UI_Base : MonoBehaviour
@@ -53,7 +54,7 @@ public abstract class UI_Base : MonoBehaviour
     // Image
     protected Image GetImage(int idx) { return Get<Image>(idx); }
 
-    /*
+
     public static void BindEvent(GameObject go, Action<PointerEventData> action, Define.UIEvent type = Define.UIEvent.Click)
     {
         UI_EventHandler evt = Utill.GetOrAddComponent<UI_EventHandler>(go);
@@ -71,5 +72,5 @@ public abstract class UI_Base : MonoBehaviour
 
         }
 
-    }*/
+    }
 }
