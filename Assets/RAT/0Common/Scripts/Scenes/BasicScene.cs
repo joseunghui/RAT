@@ -15,7 +15,7 @@ public abstract class BasicScene : MonoBehaviour
     protected virtual void Init()
     {
         // EventSystem 없으면 생성하는 로직
-        Object obj = GameObject.FindObjectOfType(typeof(EventSystem));
+        Object obj = GameObject.FindAnyObjectByType(typeof(EventSystem));
 
         if (obj == null)
             Manager.Resource.Instantiate("UI/EventSystem").name = "EventSystem";

@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class InitialScene : BasicScene
 {
+    [SerializeField]
+    GameObject SafeArea;
+
     private void Start()
     {
         Init();
+
+        Manager.UI.MakeSubItem<GameStartPanel>(parent: SafeArea.transform);
     }
 
     protected override void Init()
@@ -14,7 +19,6 @@ public class InitialScene : BasicScene
         base.Init();
 
         SceneType = SceneType.Initial;
-
     }
 
     public override void Clear()

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class UIManager
@@ -95,6 +94,8 @@ public class UIManager
         if (parent != null)
         {
             go.transform.SetParent(parent);
+            go.transform.localPosition = parent.localPosition;
+            go.transform.localScale = Vector3.one;
         }
 
         return Utill.GetOrAddComponent<T>(go);

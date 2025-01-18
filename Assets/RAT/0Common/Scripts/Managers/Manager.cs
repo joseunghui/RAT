@@ -11,16 +11,16 @@ public class Manager : MonoBehaviour
     InputManager _input = new InputManager();
     //PoolManager _pool = new PoolManager();
     ResourceManager _resource = new ResourceManager();
-    //SoundManager _sound = new SoundManager();
-    //SceneManagerEx _scene = new SceneManagerEx();
+    SoundManager _sound = new SoundManager();
+    SceneLoadManager _scene = new SceneLoadManager();
     UIManager _ui = new UIManager();
 
     public static DataManager Data { get { return Instance._data; } }
     public static InputManager Input { get { return Instance._input; } }
     //public static PoolManager Pool { get { return Instance._pool; } }
     public static ResourceManager Resource { get { return Instance._resource; } }
-    //public static SoundManager Sound { get { return Instance._sound; } }
-    //public static SceneManagerEx Scene { get { return Instance._scene; } }
+    public static SoundManager Sound { get { return Instance._sound; } }
+    public static SceneLoadManager Scene { get { return Instance._scene; } }
     public static UIManager UI { get { return Instance._ui; } }
 
     private void Start()
@@ -43,10 +43,10 @@ public class Manager : MonoBehaviour
             s_instance = go.GetComponent<Manager>();
 
             // data
-            s_instance._data.Init();
+            s_instance._data.init();
 
-            // sound
-            // s_instance._sound.init();
+            //sound
+            s_instance._sound.init();
 
             // Pool
             // s_instance._pool.init();
@@ -60,7 +60,7 @@ public class Manager : MonoBehaviour
         // Data는 클리어 하지 않음
         // Sound.Clear();
         Input.Clear();
-        // Scene.Clear();
+        Scene.Clear();
         UI.Clear();
         // Pool.Clear();
     }

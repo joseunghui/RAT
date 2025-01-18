@@ -5,7 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/RAT/0Common/Scenes/Initial.unity
+    guid: 7c25e790d06c3444b805c026f1d7530e
+  - enabled: 1
+    path: Assets/RAT/1Lobby/Scenes/Chapter1.unity
+    guid: 5bc30f38511264c479bec04083daf296
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
