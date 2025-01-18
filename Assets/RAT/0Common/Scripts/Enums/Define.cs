@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Define 
 {
+    public enum CameraMode
+    {
+        QuarterView,
+    }
     public enum UIEvent
     {
         Click,
@@ -18,4 +22,5 @@ public class Define
         Right,
         Jump,
     }
+
 }

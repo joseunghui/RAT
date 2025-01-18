@@ -13,6 +13,6 @@ public static class Extension
     // : BindEvent(go, ((PointerEventData data) => { go.transform.position = data.position; }), Define.UIEvent.Drag);
     public static void BindEvent(this GameObject go, Action<PointerEventData> action, Define.UIEvent type = Define.UIEvent.Click)
     {
-        // UI_Base.BindEvent(go, action, type);
+        UI_Base.BindEvent(go, action, type);
     }
 }
