@@ -6,4 +6,9 @@ public class SoundManager
     {
         Debug.Log($"SoundManager init()");
     }
+
+    public void Clear()
+    {
+        // Clear() µ¿ÀÛ
+    }
 }

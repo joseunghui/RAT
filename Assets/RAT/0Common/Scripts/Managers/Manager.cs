@@ -58,7 +58,7 @@ public class Manager : MonoBehaviour
     public static void Clear()
     {
         // Data는 클리어 하지 않음
-        // Sound.Clear();
+        Sound.Clear();
         Input.Clear();
         Scene.Clear();
         UI.Clear();
