@@ -22,7 +22,12 @@ public class Define
         Down,
         Left,
         Right,
-        Jump,
     }
 
+    public enum MouseEvent
+    {
+        Press,
+        DubbleClick,
+        Click,
+    }
 }

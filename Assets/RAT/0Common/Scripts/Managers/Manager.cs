@@ -28,6 +28,11 @@ public class Manager : MonoBehaviour
         Init();
     }
 
+    void Update()
+    {
+        _input.OnUpdate();
+    }
+
     static void Init()
     {
         if (s_instance == null)
@@ -47,6 +52,7 @@ public class Manager : MonoBehaviour
 
             //sound
             s_instance._sound.init();
+
 
             // Pool
             // s_instance._pool.init();
