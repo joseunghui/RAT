@@ -5,13 +5,13 @@ using UnityEngine;
 public class InitialScene : BasicScene
 {
     [SerializeField]
-    GameObject SafeArea;
+    GameObject CanvasArea;
 
     private void Start()
     {
         Init();
 
-        Manager.UI.MakeSubItem<GameStartPanel>(parent: SafeArea.transform);
+        Manager.UI.MakeSubItem<GameStartPanel>(parent: CanvasArea.transform);
     }
 
     protected override void Init()
