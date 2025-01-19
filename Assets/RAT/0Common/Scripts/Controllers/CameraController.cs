@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     Vector3 _delta = new Vector3 (0, 0, 0);
 
     [SerializeField]
-    GameObject _player = null;
+    GameObject _player;
 
     void Start()
     {
