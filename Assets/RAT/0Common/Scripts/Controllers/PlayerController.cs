@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log($"Player Çö À§Ä¡ >> {gameObject.transform.position}");
+
         switch (_state)
         {
             case PlayerState.Die:
@@ -69,6 +71,9 @@ public class PlayerController : MonoBehaviour
 
     void UpdateMoving()
     {
+        if (gameObject.transform.position.y < -80)
+            UpdateDie();
+
         Vector3 dir = _destPos - transform.position;
 
         if (dir.magnitude < 0.0001f)
