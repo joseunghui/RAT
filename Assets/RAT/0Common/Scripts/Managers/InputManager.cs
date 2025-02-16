@@ -9,7 +9,6 @@ public class InputManager
     public Action<Define.KeyEvent> KeyAction = null;
     public Action<Define.MouseEvent> MouseAction = null;
 
-
     bool _mousePressed = false;
 
     public void OnUpdate()
@@ -19,13 +18,14 @@ public class InputManager
 
         if (KeyAction != null)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            
+            if (Input.GetKey(KeyCode.W))
                 KeyAction.Invoke(Define.KeyEvent.Up);
-            else if (Input.GetKeyDown(KeyCode.S))
+            else if (Input.GetKey(KeyCode.S))
                 KeyAction.Invoke(Define.KeyEvent.Down);
-            else if (Input.GetKeyDown(KeyCode.D))
+            else if (Input.GetKey(KeyCode.D))
                 KeyAction.Invoke(Define.KeyEvent.Right);
-            else if (Input.GetKeyDown(KeyCode.A))
+            else if (Input.GetKey(KeyCode.A))
                 KeyAction.Invoke(Define.KeyEvent.Left);
         }
 
