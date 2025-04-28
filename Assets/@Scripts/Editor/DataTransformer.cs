@@ -8,6 +8,7 @@ using System;
 using System.Reflection;
 using System.Collections;
 using System.ComponentModel;
+using Data;
 
 public class DataTransformer : EditorWindow
 {
@@ -15,7 +16,7 @@ public class DataTransformer : EditorWindow
     [MenuItem("Tools/ParseExcel %#K")]
     public static void ParseExcelDataToJson()
     {
-        //ParseExcelDataToJson<TestDataLoader, TestData>("Test");
+        ParseExcelDataToJson<TestDataLoader, TestData>("Test");
         //LEGACY_ParseTestData("Test");
 
         Debug.Log("DataTransformer Completed");
@@ -42,9 +43,9 @@ public class DataTransformer : EditorWindow
 
     static void LEGACY_ParseTestData(string filename)
     {
-        //TestDataLoader loader = new TestDataLoader();
+        TestDataLoader loader = new TestDataLoader();
 
-        /*string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/ExcelData/{filename}Data.csv").Split("\n");
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/ExcelData/{filename}Data.csv").Split("\n");
 
         for (int y = 1; y < lines.Length; y++)
         {
@@ -66,7 +67,7 @@ public class DataTransformer : EditorWindow
         }
 
         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-        File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);*/
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
         AssetDatabase.Refresh();
     }
     #endregion

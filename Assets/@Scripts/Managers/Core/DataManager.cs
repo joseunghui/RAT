@@ -1,3 +1,4 @@
+using Data;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,11 +19,11 @@ public class DataManager
 {
     private HashSet<IValidate> _loaders = new HashSet<IValidate>();
 
-    //public Dictionary<int, Data.TestData> TestDic { get; private set; } = new Dictionary<int, Data.TestData>();
+    public Dictionary<int, Data.TestData> TestDic { get; private set; } = new Dictionary<int, Data.TestData>();
 
     public void Init()
     {
-        //TestDic = LoadJson<TestDataLoader, int, Data.TestData>("TestData").MakeDict();
+        TestDic = LoadJson<TestDataLoader, int, Data.TestData>("TestData").MakeDict();
     }
 
     private Loader LoadJson<Loader, Key, Value>(string path) where Loader : ILoader<Key, Value>

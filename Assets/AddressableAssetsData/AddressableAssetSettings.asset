@@ -24,11 +24,11 @@ MonoBehaviour:
   m_InternalBundleIdMode: 1
   m_AssetLoadMode: 0
   m_BundledAssetProviderType:
-    m_AssemblyName: 
-    m_ClassName: 
+    m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider
   m_AssetBundleProviderType:
-    m_AssemblyName: 
-    m_ClassName: 
+    m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
   m_IgnoreUnsupportedFilesInBuild: 0
   m_UniqueBundleIds: 0
   m_EnableJsonCatalog: 0
@@ -59,12 +59,30 @@ MonoBehaviour:
   m_BuildAddressablesWithPlayerBuild: 0
   m_overridePlayerVersion: '[UnityEditor.PlayerSettings.bundleVersion]'
   m_GroupAssets:
+  - {fileID: 11400000, guid: 1fcab521e8a0db644b658a1db901e013, type: 2}
+  - {fileID: 11400000, guid: f1a2e778a6aa93a4b9882ae27375ac47, type: 2}
+  - {fileID: 11400000, guid: 13127d7d14042fa4b946044e5c440717, type: 2}
   - {fileID: 11400000, guid: e50d8d5b263bd9e499a92bb573ffb3b4, type: 2}
+  - {fileID: 11400000, guid: 4f1d11b54d237ac498e057f463eee272, type: 2}
   m_BuildSettings:
     m_LogResourceManagerExceptions: 1
     m_BundleBuildPath: Temp/com.unity.addressables/AssetBundles
   m_ProfileSettings:
     m_Profiles:
+    - m_InheritedParent: 
+      m_Id: 1a0cadc6b1226c74d9f2c6177288c950
+      m_ProfileName: New Profile
+      m_Values:
+      - m_Id: 29ac32db50891634b98523c05f89d20e
+        m_Value: 'ServerData/[BuildTarget]'
+      - m_Id: 30e5714759d697e4d9440f08f0e614c5
+        m_Value: <undefined>
+      - m_Id: 4c1c88d1ca08575478cf73293f9a665b
+        m_Value: <undefined>
+      - m_Id: 965e7e993e186bb41b103bb8955daea4
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: 9810ec5c65b917247b23affea896aba7
+        m_Value: 'ServerData/[BuildTarget]'
     - m_InheritedParent: 
       m_Id: c6189a3d4279b9b46b08762341302b67
       m_ProfileName: Default
@@ -99,6 +117,7 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - default
+    - PreLoad
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 7b754d146579955448c69e0e0617ca78, type: 2}
