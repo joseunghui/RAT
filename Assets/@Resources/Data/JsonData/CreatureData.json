@@ -1,0 +1,34 @@
+{
+  "creatures": [
+    {
+      "DataId": 100000,
+      "DescriptionTextID": "쥐",
+      "PrefabLabel": "Rat",
+      "ColliderOffsetX": 0.0,
+      "ColliderOffstY": 0.0,
+      "ColliderRadius": 33.0,
+      "Mass": 0.0,
+      "MaxHp": 3.0,
+      "Atk": 1.0,
+      "AtkRange": 2.0,
+      "MoveSpeed": 2.0,
+      "AnimatorName": "1",
+      "DropItemId": 0
+    },
+    {
+      "DataId": 100001,
+      "DescriptionTextID": "쥐덫",
+      "PrefabLabel": "Trap",
+      "ColliderOffsetX": 0.0,
+      "ColliderOffstY": 0.0,
+      "ColliderRadius": 33.0,
+      "Mass": 0.0,
+      "MaxHp": 1.0,
+      "Atk": 1.0,
+      "AtkRange": 1.0,
+      "MoveSpeed": 0.0,
+      "AnimatorName": "2",
+      "DropItemId": 200000
+    }
+  ]
+}

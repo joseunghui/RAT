@@ -1,4 +1,5 @@
 using UnityEngine;
+using static Define;
 
 public class Chapter1Scene : BaseScene
 {
@@ -15,6 +16,7 @@ public class Chapter1Scene : BaseScene
         map.name = "@Chapter1Map";
 
         // TODO Rat ½ºÆù
+        Rat rat = Managers.Object.Spawn<Rat>(new Vector3Int(0, 0, 0), RAT_ID);
 
         return true;
     }

@@ -25,7 +25,7 @@ public static class Define
         None,
         Creature,
         Projectile,
-
+        Env,
     }
 
     public enum ECreatureType
@@ -53,5 +53,15 @@ public static class Define
         Effect,
         Max,
     }
+
+
+    public const int CAMERA_PROJECTION_SIZE = 12;
+
+    public const int RAT_ID = 200000;
+
+    public const int MONSTER_TRAP = 200100;
+
+    public const int ENV_WATER = 300000;
+
 
 }
