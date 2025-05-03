@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - Ground
   - Wall
@@ -11,20 +11,20 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
+  - Bush
   - 
   - 
   - 
+  - Object
   - 
   - 
+  - Creature
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Projectile
   - 
   - 
   - 
@@ -44,3 +44,59 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: TransparentFX
+    uniqueID: 890822427
+    locked: 0
+  - name: Ignore Raycast
+    uniqueID: 3978248179
+    locked: 0
+  - name: Ground
+    uniqueID: 3447134275
+    locked: 0
+  - name: Water
+    uniqueID: 1905961833
+    locked: 0
+  - name: UI
+    uniqueID: 609492259
+    locked: 0
+  - name: Bush
+    uniqueID: 1321881197
+    locked: 0
+  - name: New Layer 7
+    uniqueID: 3928136993
+    locked: 0
+  - name: New Layer 8
+    uniqueID: 2966750457
+    locked: 0
+  - name: New Layer 9
+    uniqueID: 373630627
+    locked: 0
+  - name: Object
+    uniqueID: 1465933449
+    locked: 0
+  - name: New Layer 11
+    uniqueID: 888041755
+    locked: 0
+  - name: New Layer 12
+    uniqueID: 3300920917
+    locked: 0
+  - name: Creature
+    uniqueID: 2574535987
+    locked: 0
+  - name: New Layer 14
+    uniqueID: 602667865
+    locked: 0
+  - name: New Layer 15
+    uniqueID: 3641454763
+    locked: 0
+  - name: Projectile
+    uniqueID: 453810819
+    locked: 0
+  - name: New Layer 17
+    uniqueID: 2158226187
+    locked: 0
+  - name: 
+    uniqueID: 3901106485
+    locked: 0
+  m_RenderingLayers:
+  - Default

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: ran_terrain
+  m_Name: ground_random_0
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: 0}
   m_DefaultGameObject: {fileID: 0}
@@ -18,16 +18,28 @@ MonoBehaviour:
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
+    - {fileID: 21300000, guid: ea9c54c4581cb8540b2a1488d246f752, type: 3}
+    - {fileID: 21300000, guid: ea9c54c4581cb8540b2a1488d246f752, type: 3}
+    - {fileID: 21300000, guid: ea9c54c4581cb8540b2a1488d246f752, type: 3}
+    - {fileID: 21300000, guid: dc30e46ff318ab446a3a8581e69d2c2e, type: 3}
+    - {fileID: 21300000, guid: 7aceaeb53376c4546a5eefa872ed2f17, type: 3}
     - {fileID: 21300000, guid: fa06e09f6453c5e4eb81c1b025d30f69, type: 3}
     - {fileID: 21300000, guid: 4187a0dba24877345883362d6950adeb, type: 3}
-    - {fileID: 21300000, guid: 6212c5d61c114d84e9683afc16c466e3, type: 3}
+    - {fileID: 21300000, guid: ea9c54c4581cb8540b2a1488d246f752, type: 3}
+    - {fileID: 21300000, guid: ea9c54c4581cb8540b2a1488d246f752, type: 3}
+    - {fileID: 21300000, guid: ea9c54c4581cb8540b2a1488d246f752, type: 3}
+    - {fileID: 21300000, guid: ea9c54c4581cb8540b2a1488d246f752, type: 3}
+    - {fileID: 21300000, guid: ea9c54c4581cb8540b2a1488d246f752, type: 3}
+    - {fileID: 21300000, guid: ea9c54c4581cb8540b2a1488d246f752, type: 3}
+    - {fileID: 21300000, guid: ea9c54c4581cb8540b2a1488d246f752, type: 3}
+    - {fileID: 21300000, guid: ea9c54c4581cb8540b2a1488d246f752, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
     m_PerlinScale: 0.5
     m_Output: 1
     m_ColliderType: 1
-    m_RandomTransform: 0
+    m_RandomTransform: 4
     m_Neighbors: 
     m_NeighborPositions:
     - {x: -1, y: 1, z: 0}
