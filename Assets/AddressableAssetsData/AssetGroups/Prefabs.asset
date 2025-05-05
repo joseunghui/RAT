@@ -15,12 +15,6 @@ MonoBehaviour:
   m_GroupName: Prefabs
   m_GUID: 1da598135bb760f498d3f83f33ee12d3
   m_SerializeEntries:
-  - m_GUID: 6a76c36f177a5d949a9d25a40fc00c79
-    m_Address: Rat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f8cc3614ce63ed1489669172ad4ea72a
     m_Address: Chapter1Map
     m_ReadOnly: 0
