@@ -54,8 +54,8 @@ public class Creature : BaseObject
         gameObject.name = $"{CreatureData.DataId}_{CreatureData.DescriptionTextID}";
 
         // Collider (충돌 넣기)
-        Collider.offset = new Vector2(CreatureData.ColliderOffsetX, CreatureData.ColliderOffstY);
-        Collider.radius = CreatureData.ColliderRadius;
+        //Collider.offset = new Vector2(CreatureData.ColliderOffsetX, CreatureData.ColliderOffstY);
+        //Collider.radius = CreatureData.ColliderRadius;
 
 
         // RigidBody (질량 받아오기)

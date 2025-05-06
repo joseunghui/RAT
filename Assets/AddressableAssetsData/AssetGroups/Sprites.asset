@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Sprites
   m_GUID: 96e73bf89303e1e41b93288312d4a31b
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: f5c60b35ad7ebac428d413612704f3d5
+    m_Address: rat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f106ed70922134a44ae85a1f7c0f196c, type: 2}
   m_SchemaSet:

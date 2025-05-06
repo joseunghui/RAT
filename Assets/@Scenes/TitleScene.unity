@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1503809304
+--- !u!1001 &778464115
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -209,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5276233554669128748, guid: 30f1a8442532fc44395b0627b3c2224a, type: 3}
       propertyPath: m_Name
-      value: '@UI_TitleScene'
+      value: UI_TitleScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -371,4 +371,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1967779433}
   - {fileID: 2112788115}
-  - {fileID: 1503809304}
+  - {fileID: 778464115}
