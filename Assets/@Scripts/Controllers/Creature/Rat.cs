@@ -8,6 +8,8 @@ public class Rat : Creature
     [SerializeField]
     float _speed = 50000;
 
+    float filp = 1;
+
     public override ECreatureState CreatureState
     {
         get { return _creatureState; }
@@ -17,7 +19,24 @@ public class Rat : Creature
             {
                 base.CreatureState = value;
 
-                
+                switch (_creatureState)
+                {
+                    case ECreatureState.None:
+                        break;
+                    case ECreatureState.Idle:
+                        Ani.CrossFade("rat_idle", 0.1f);
+                        break;
+                    case ECreatureState.Move:
+                        Ani.CrossFade("rat_run", 0.1f);
+                        break;
+                    case ECreatureState.Attack:
+                        Ani.CrossFade("rat_attack", 0.3f);
+                        break;
+                    case ECreatureState.Jump:
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
@@ -40,17 +59,23 @@ public class Rat : Creature
 
     private void Update()
     {
+        if (!Input.anyKey)
+            CreatureState = ECreatureState.Idle;
 
         // 이동 하기
         if (Input.GetKey(KeyCode.A))
         {
-            Debug.Log("A");
-            gameObject.transform.TranslateEx(new Vector3Int(5, 0, 0));
+            CreatureState = ECreatureState.Move;
+
+            ChangedScaleX(false);
+            gameObject.transform.parent.Translate(new Vector3(-10, 0, 0) * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            Debug.Log("D");
-           
+            CreatureState = ECreatureState.Move;
+
+            ChangedScaleX(true);
+            gameObject.transform.parent.Translate(new Vector3(+10, 0, 0) * Time.deltaTime);
         }
 
     }
@@ -66,24 +91,25 @@ public class Rat : Creature
     }
 
 
-    private void HandleOnMoveDirChanged(Vector2 moveDir)
+    private void HandleOnCreatureStateChanged(ECreatureState state)
     {
+        Debug.Log("HandleOnCreatureStateChanged");
+
+
+    }
+
+    void ChangedScaleX(bool IsFront)
+    {
+        Vector3 scale = gameObject.transform.localScale;
+
+        if (IsFront)
+            filp = scale.x < 0 ? scale.x * (-1) : scale.x;
+        else
+            filp = scale.x > 0 ? scale.x * (-1) : scale.x;
+
+        gameObject.transform.localScale = new Vector3(filp, scale.y, scale.z);
         
     }
 
 
-    private void HandleOnCreatureStateChanged(ECreatureState state)
-    {
-        switch (state)
-        {
-            case ECreatureState.Idle:
-                CreatureState = ECreatureState.Idle;
-                break;
-            case ECreatureState.Move:
-                CreatureState = ECreatureState.Move;
-                break;
-            default:
-                break;
-        }
-    }
 }

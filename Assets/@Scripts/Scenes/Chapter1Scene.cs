@@ -17,7 +17,7 @@ public class Chapter1Scene : BaseScene
         map.name = "@Chapter1Map";
 
         // TODO Rat 스폰
-        Rat rat = Managers.Object.Spawn<Rat>(new Vector3Int(0, 0, 0));
+        Rat rat = Managers.Object.Spawn<Rat>(new Vector3Int(-10, 0, 0));
 
 
         //camera 주시

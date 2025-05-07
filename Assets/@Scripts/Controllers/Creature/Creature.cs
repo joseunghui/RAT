@@ -26,12 +26,13 @@ public class Creature : BaseObject
             if (_creatureState != value)
             {
                 // 상태가 변경 되는 경우 애니메이션 또한 재생
-                // Creature의 상태와 Spine 애니메이션은 함께 관리되어야 함!
                 _creatureState = value;
-                UpdateAnimation();
+
             }
         }
     }
+
+    
 
     public override bool Init()
     {
@@ -54,8 +55,8 @@ public class Creature : BaseObject
         gameObject.name = $"{CreatureData.DataId}_{CreatureData.DescriptionTextID}";
 
         // Collider (충돌 넣기)
-        //Collider.offset = new Vector2(CreatureData.ColliderOffsetX, CreatureData.ColliderOffstY);
-        //Collider.radius = CreatureData.ColliderRadius;
+        Collider.offset = new Vector2(CreatureData.ColliderOffsetX, CreatureData.ColliderOffstY);
+        Collider.radius = CreatureData.ColliderRadius;
 
 
         // RigidBody (질량 받아오기)
@@ -74,5 +75,6 @@ public class Creature : BaseObject
         // State
         CreatureState = ECreatureState.Idle;
     }
+
 
 }

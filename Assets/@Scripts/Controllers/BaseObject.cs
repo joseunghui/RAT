@@ -15,17 +15,6 @@ public class BaseObject : InitBase
     // Object의 포괄적인 종류라고 생각하면 됨 (Item, Creature, NPC 등)
     public int DataTemplateID { get; set; }
 
-    // 내가 왼쪽을 보고있느냐를 관리 (Filp - 기본이 왼쪽 바라보기)
-    bool _lookLeft = true;
-    public bool LookLeft
-    {
-        get { return _lookLeft; }
-        set
-        {
-            _lookLeft = value;
-            Flip(!value);
-        }
-    }
 
     public override bool Init()
     {
@@ -54,56 +43,6 @@ public class BaseObject : InitBase
 
     #endregion
 
-    #region Animation
-    protected virtual void SetLayerSorting(int sortingOrder)
-    {
-        SortingGroup sg = Utils.GetOrAddComponent<SortingGroup>(gameObject);
-        sg.sortingOrder = sortingOrder;
-    }
 
-    protected virtual void UpdateAnimation()
-    {
-
-    }
-
-    public void PlayAnimation(ECreatureType type, ECreatureState creatureState, bool loop)
-    {
-        if (Ani == null)
-            return;
-
-        
-    }
-
-    public void SetRigidBodyVelocity(Vector2 velocity)
-    {
-        if (RigidBody == null)
-            return;
-
-        RigidBody.linearVelocity = velocity;
-
-        if (velocity.x < 0)
-            LookLeft = true;
-        else if (velocity.x > 0)
-            LookLeft = false;
-    }
-    #endregion
-
-    public void TranslateEx(Vector3 dir)
-    {
-        transform.Translate(dir);
-
-        if (dir.x < 0)
-            LookLeft = true;
-        else if (dir.x > 0)
-            LookLeft = false;
-    }
-
-    public void Flip(bool flag)
-    {
-        if (Ani == null)
-            return;
-
-        // TODO Flip 설정
-    }
 
 }
