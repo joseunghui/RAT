@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static Define;
@@ -7,6 +8,9 @@ public class Rat : Creature
 {
     [SerializeField]
     float _speed = 50000;
+
+    bool _isJumping = false;
+    float _jump = 0.5f;
 
     float filp = 1;
 
@@ -33,6 +37,7 @@ public class Rat : Creature
                         Ani.CrossFade("rat_attack", 0.3f);
                         break;
                     case ECreatureState.Jump:
+                        Ani.CrossFade("rat_jump", 0.1f);
                         break;
                     default:
                         break;
@@ -47,7 +52,7 @@ public class Rat : Creature
             return false;
 
         CreatureType = ECreatureType.Rat;
-
+           
         Managers.Game.OnCreatureStateChanged -= HandleOnCreatureStateChanged;
         Managers.Game.OnCreatureStateChanged += HandleOnCreatureStateChanged;
 
@@ -59,7 +64,7 @@ public class Rat : Creature
 
     private void Update()
     {
-        if (!Input.anyKey)
+        if (!Input.anyKey && _isJumping == false)
             CreatureState = ECreatureState.Idle;
 
         // 이동 하기
@@ -68,19 +73,61 @@ public class Rat : Creature
             CreatureState = ECreatureState.Move;
 
             ChangedScaleX(false);
-            gameObject.transform.parent.Translate(new Vector3(-10, 0, 0) * Time.deltaTime);
+            gameObject.transform.parent.Translate(Vector3.left * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.D))
         {
             CreatureState = ECreatureState.Move;
 
             ChangedScaleX(true);
-            gameObject.transform.parent.Translate(new Vector3(+10, 0, 0) * Time.deltaTime);
+            gameObject.transform.parent.Translate(Vector3.right * Time.deltaTime);
+        }
+
+        // 점프하기
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _isJumping = true;
+            CreatureState = ECreatureState.Jump;
+            // 앞(오른쪽)으로 좀 이동하면서 위로 점프
+
+            StartCoroutine(CoCreatureJump());
+
         }
 
     }
 
+    float playJumpTime = 0;
 
+    IEnumerator CoCreatureJump()
+    {
+        Debug.Log($"IsJumping? >> {_isJumping}");
+        if (_isJumping)
+        {
+            if (playJumpTime < _jump)
+            {
+                playJumpTime += Time.deltaTime;
+                gameObject.transform.parent.Translate(Vector3.up * Time.deltaTime);
+            }
+            else if (playJumpTime > _jump && playJumpTime < _jump *2)
+            {
+                playJumpTime += Time.deltaTime;
+                gameObject.transform.parent.Translate(-Vector3.up * Time.deltaTime);
+            }
+            else if (playJumpTime >= _jump * 2)
+            {
+                _isJumping = false;
+            }
+
+            Debug.Log($"playJumpTime >> {playJumpTime}");
+        }
+        else
+        {
+            Debug.Log("break!");
+            yield break;
+        }
+           
+
+    }
 
     public override void SetInfo(int templateID)
     {
