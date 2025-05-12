@@ -9,9 +9,6 @@ public class Rat : Creature
     [SerializeField]
     float _speed = 50000;
 
-    bool _isJumping = false;
-    float _jump = 0.5f;
-
     float filp = 1;
 
     public override ECreatureState CreatureState
@@ -64,7 +61,9 @@ public class Rat : Creature
 
     private void Update()
     {
-        if (!Input.anyKey && _isJumping == false)
+        Debug.Log($"현재상태 >> {CreatureState}"); 
+
+        if (!Input.anyKey)
             CreatureState = ECreatureState.Idle;
 
         // 이동 하기
@@ -86,48 +85,12 @@ public class Rat : Creature
         // 점프하기
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _isJumping = true;
             CreatureState = ECreatureState.Jump;
-            // 앞(오른쪽)으로 좀 이동하면서 위로 점프
-
-            StartCoroutine(CoCreatureJump());
-
         }
 
     }
 
-    float playJumpTime = 0;
 
-    IEnumerator CoCreatureJump()
-    {
-        Debug.Log($"IsJumping? >> {_isJumping}");
-        if (_isJumping)
-        {
-            if (playJumpTime < _jump)
-            {
-                playJumpTime += Time.deltaTime;
-                gameObject.transform.parent.Translate(Vector3.up * Time.deltaTime);
-            }
-            else if (playJumpTime > _jump && playJumpTime < _jump *2)
-            {
-                playJumpTime += Time.deltaTime;
-                gameObject.transform.parent.Translate(-Vector3.up * Time.deltaTime);
-            }
-            else if (playJumpTime >= _jump * 2)
-            {
-                _isJumping = false;
-            }
-
-            Debug.Log($"playJumpTime >> {playJumpTime}");
-        }
-        else
-        {
-            Debug.Log("break!");
-            yield break;
-        }
-           
-
-    }
 
     public override void SetInfo(int templateID)
     {
