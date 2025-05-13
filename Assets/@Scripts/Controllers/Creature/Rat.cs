@@ -6,9 +6,7 @@ using static Define;
 
 public class Rat : Creature
 {
-    [SerializeField]
-    float _speed = 50000;
-
+    float _speed = 5;
     float filp = 1;
 
     public override ECreatureState CreatureState
@@ -59,9 +57,13 @@ public class Rat : Creature
         return true;
     }
 
+    Vector3 initPosition = Vector3.zero;
+    float _jumpProcess = 0;
+    float _jumpTime;
+
     private void Update()
     {
-        Debug.Log($"현재상태 >> {CreatureState}"); 
+        //Debug.Log($"현재상태 >> {CreatureState}"); 
 
         if (!Input.anyKey)
             CreatureState = ECreatureState.Idle;
@@ -72,20 +74,43 @@ public class Rat : Creature
             CreatureState = ECreatureState.Move;
 
             ChangedScaleX(false);
-            gameObject.transform.parent.Translate(Vector3.left * Time.deltaTime);
+            gameObject.transform.Translate(Vector3.left * Time.deltaTime * _speed);
         }
         if (Input.GetKey(KeyCode.D))
         {
             CreatureState = ECreatureState.Move;
 
             ChangedScaleX(true);
-            gameObject.transform.parent.Translate(Vector3.right * Time.deltaTime);
+            gameObject.transform.Translate(Vector3.right * Time.deltaTime * _speed);
         }
 
         // 점프하기
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            initPosition = gameObject.transform.position;
             CreatureState = ECreatureState.Jump;
+            
+            _jumpTime = Ani.GetCurrentAnimatorClipInfo(0).Length; // = 1
+
+            while (_jumpProcess < _jumpTime)
+            {
+                _jumpProcess += Time.deltaTime;
+
+                if (_jumpProcess < _jumpTime/2)
+                {
+                    Debug.Log("위로 >> " + _jumpProcess);
+                    // 위로
+                    gameObject.transform.Translate(Vector3.up * _speed);
+                }
+                else
+                {
+                    Debug.Log("아래로 >> " + _jumpProcess);
+                    // 아래로
+                    gameObject.transform.Translate(Vector3.down * _speed);
+                }
+                
+
+            }
         }
 
     }

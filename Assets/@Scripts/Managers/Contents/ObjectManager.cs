@@ -39,7 +39,7 @@ public class ObjectManager
             switch (creature.CreatureType)
             {
                 case ECreatureType.Rat:
-                    obj.transform.parent = RatRoot;
+                    //obj.transform.parent = RatRoot;
                     Rat rat = obj as Rat;
                     Rats.Add(rat);
                     break;

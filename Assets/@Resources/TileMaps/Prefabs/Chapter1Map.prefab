@@ -1250,6 +1250,7 @@ GameObject:
   - component: {fileID: 3564614789871912801}
   - component: {fileID: 5122999787626669996}
   - component: {fileID: 907655942004648696}
+  - component: {fileID: 3515488991312803648}
   m_Layer: 3
   m_Name: ground
   m_TagString: Untagged
@@ -75572,6 +75573,26 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!154 &3515488991312803648
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655078271830827543}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_TerrainData: {fileID: 0}
+  m_EnableTreeColliders: 1
 --- !u!1 &3604876667647493905
 GameObject:
   m_ObjectHideFlags: 0

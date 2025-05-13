@@ -14,7 +14,7 @@ public class CameraController : InitBase
         if (base.Init() == false)
             return false;
 
-        Camera.main.orthographicSize = 15.0f;
+        Camera.main.orthographicSize = 5.0f;
 
         return true;
     }
@@ -25,7 +25,7 @@ public class CameraController : InitBase
         if (Target == null)
             return;
 
-        Vector3 targetPosition = new Vector3(Target.CenterPosition.x, Target.CenterPosition.y, -10f);
+        Vector3 targetPosition = new Vector3(Target.CenterPosition.x, Target.CenterPosition.y, 0f);
         transform.position = targetPosition;
     }
 }
